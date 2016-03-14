@@ -1,0 +1,20 @@
+
+html, body {
+ padding: 0;
+ margin: 0;
+}
+body {
+  background: #545B89;
+}
+
+.app {
+  max-width: 250px;
+  margin: 100px auto;
+}
+.app button {
+  background: white;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  margin-top: 20px;
+}
