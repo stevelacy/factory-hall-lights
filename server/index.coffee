@@ -1,10 +1,11 @@
+path = require 'path'
 com = require 'serialport'
 express = require 'express'
 app = express()
 
 PORT = 4321
 
-app.use express.static __dirname + '/client'
+app.use express.static path.join __dirname, '../client/'
 
 serialPort = new com.SerialPort '/dev/ttyUSB0',
   baudrate: 9600
