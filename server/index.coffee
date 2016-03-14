@@ -2,6 +2,8 @@ com = require 'serialport'
 express = require 'express'
 app = express()
 
+PORT = 4321
+
 app.use express.static 'client'
 
 serialPort = new com.SerialPort '/dev/ttyUSB0',
@@ -22,4 +24,5 @@ app.post '/mode/:mode', (req, res) ->
 
 app.get '/', (req, res) ->
 
-app.listen 4321
+app.listen PORT
+console.log 'starting on port', PORT
