@@ -4,7 +4,7 @@ app = express()
 
 PORT = 4321
 
-app.use express.static 'client'
+app.use express.static __dirname + '/client'
 
 serialPort = new com.SerialPort '/dev/ttyUSB0',
   baudrate: 9600
@@ -21,8 +21,6 @@ app.post '/color/:rgb', (req, res) ->
 app.post '/mode/:mode', (req, res) ->
   serialPort.write "0,#{req.params.mode},255,0,0,0\n"
   res.status(200).end()
-
-app.get '/', (req, res) ->
 
 app.listen PORT
 console.log 'starting on port', PORT
